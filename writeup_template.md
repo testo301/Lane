@@ -10,8 +10,12 @@ The goals / steps of this project are the following:
 
 
 [//]: # (Image References)
-
-[image1]: ./examples/grayscale.jpg "Grayscale"
+[image1]: ./examples/grayScale.jpg "Grayscale"
+[image2]: ./examples/gaussianBlur.jpg "Gaussian Blur"
+[image3]: ./examples/cannyTransform.jpg "Canny Transformation"
+[image4]: ./examples/quadrilateralMask.jpg "Quadrilateral Mask"
+[image5]: ./examples/houghLines.jpg "Hough Lines"
+[image6]: ./examples/weightedImage.jpg "Weighted Image"
 
 ---
 
@@ -23,13 +27,19 @@ The pipeline is wrapped within the function process_image() and takes any image 
 
 The image is first converted into the grayscale.
 
-[image1]: ./examples/grayScale.jpg "Grayscale"
+![alt text][image1]
 
 On top of it, Gaussian blurring is applied with the kernel constant defined as 5.
 
+![alt text][image2]
+
 Further, Canny transformation is performed with thresholds 100 and 200 for the lower and upper respectively.
 
+![alt text][image3]
+
 The quadrilateral area of the image is masked, based on the top bottom corners and the middle of the horizon line defined by the horizon_scalar fixed at 1.25. 
+
+![alt text][image4]
 
 Hough lines were extracted with the following set of parameters. The parameters aim at capturing proper coordinates for meaningful shapes on the image.
 
@@ -38,14 +48,18 @@ Hough lines were extracted with the following set of parameters. The parameters 
     threshold = 50          # Votes for intersections
     min_line_len = 40       # Pixel thresholds for line length
     max_line_gap = 50       # Gap threshold for line connection
-  
+
+![alt text][image5]
+
 The improved draw_lines() function is provided to extrapolate the found lines.
 
 The Hough lines coordinates are used to fit the lines with the first order polynomial. The lines are then divided into ascending and descending shapes. The coordinates and then again grouped into descending and ascending lines and one single line is being fitted for those two respective shapes.
 
 Having two lines only stabilizes the solution.
 
-![alt text][image1]
+The images are merged with specified weights.
+
+![alt text][image6]
 
 
 ### 2. Identify potential shortcomings with your current pipeline
