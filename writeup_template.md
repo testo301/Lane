@@ -10,12 +10,12 @@ The goals / steps of this project are the following:
 
 
 [//]: # (Image References)
-[image1]: ./examples/grayScale.jpg "Grayscale"
-[image2]: ./examples/gaussianBlur.jpg "Gaussian Blur"
-[image3]: ./examples/cannyTransform.jpg "Canny Transformation"
-[image4]: ./examples/quadrilateralMask.jpg "Quadrilateral Mask"
-[image5]: ./examples/houghLines.jpg "Hough Lines"
-[image6]: ./examples/weightedImage.jpg "Weighted Image"
+[image1]: ./test_images_output/grayScale.jpg "Grayscale"
+[image2]: ./test_images_output/gaussianBlur.jpg "Gaussian Blur"
+[image3]: ./test_images_output/cannyTransform.jpg "Canny Transformation"
+[image4]: ./test_images_output/quadrilateralMask.jpg "Quadrilateral Mask"
+[image5]: ./test_images_output/houghLines.jpg "Hough Lines"
+[image6]: ./test_images_output/weightedImage.jpg "Weighted Image"
 
 ---
 
@@ -74,7 +74,7 @@ The main shortcomings are:
 ### 3. Suggest possible improvements to your pipeline
 
 Potential improvements involve:
-- adding averaging of the lines (e.g. simple moving average of the anchor coordinates) for the last X frames) to stabilize the solution.
+- adding averaging of the lines (e.g. simple moving average of the anchor coordinates or lines for the last X frame window) to stabilize the solution. 
 - deep dive frame by frame on the optional challenge to identify the reason for lines crossing in the middle of the image.
 - better support for intermittent lines
 - added support for shape curvature capturing
